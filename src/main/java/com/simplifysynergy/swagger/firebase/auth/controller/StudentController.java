@@ -20,7 +20,7 @@ public class StudentController {
     private final StudentRepository studentRepository;
 
     @GetMapping
-    @Operation(description = "Get all students", tags = {"Student API"})
+    @Operation(description = "Get all students")
     public Flux<Student> getAll() {
         return studentRepository.findAll();
     }

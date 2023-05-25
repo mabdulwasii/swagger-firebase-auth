@@ -5,7 +5,6 @@ logging:
     org.springframework.r2dbc: DEBUG
 
 spring:
-
   jackson:
     serialization:
       indent-output: true
@@ -16,9 +15,24 @@ spring:
   thymeleaf:
     cache: false
     mode: HTML
-    prefix: file:src/main/resources/templates/
+    check-template: true
+    check-template-location: true
+    enabled: true
+    prefix: src/main/resources/templates/
+    suffix: .html
+  auth:
+    base64-secret: OTUyNDMyY2NlN2QwN2MyMmI5MmVkMWU1NGE1NjUxMjdlYjQ3OGJlMTExZjdhOTZmMmUxMzg3MmEzYzc2ODIyYzVkYTRjYmYwODFjZjIwMGVjYTljOWFiZmZkOWQyYjAyNzIwNmUyMGNkMDkzMWZjNjk2NWM3ZGNhZDkxMjNjNTM=
+    # Token is valid 24 hours
+    token-validity-in-seconds: 86400
+    token-validity-in-seconds-for-remember-me: 2592000
 
 springdoc:
   show-actuator: true
   api-docs:
     enabled: true
+
+#    Me12345
+
+app:
+  firebase:
+    key: AIzaSyCt9RtnfJqnv2mlKLlprp0ItGI-5qMWM44
