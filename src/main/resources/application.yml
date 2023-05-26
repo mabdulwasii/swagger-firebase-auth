@@ -15,11 +15,7 @@ spring:
   thymeleaf:
     cache: false
     mode: HTML
-    check-template: true
-    check-template-location: true
-    enabled: true
-    prefix: src/main/resources/templates/
-    suffix: .html
+  
   auth:
     base64-secret: OTUyNDMyY2NlN2QwN2MyMmI5MmVkMWU1NGE1NjUxMjdlYjQ3OGJlMTExZjdhOTZmMmUxMzg3MmEzYzc2ODIyYzVkYTRjYmYwODFjZjIwMGVjYTljOWFiZmZkOWQyYjAyNzIwNmUyMGNkMDkzMWZjNjk2NWM3ZGNhZDkxMjNjNTM=
     # Token is valid 24 hours
