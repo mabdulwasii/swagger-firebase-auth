@@ -32,10 +32,7 @@ public class StudentController {
     })
     public Mono<Student> getByName(@PathVariable String name) {
         return studentRepository.findByName(name)
-                .mapNotNull(student -> {
-                    if (student == null) throw new InvalidStudentNameException("name " + name + " is null");
-                    return student;
-                });
+                .switchIfEmpty(Mono.error(new InvalidStudentNameException("Student with name " + name + " is null")));
     }
 
     @PostMapping
