@@ -44,15 +44,4 @@ public class FirebaseAuthenticationManager implements ReactiveAuthenticationMana
                 .map(item -> new UsernamePasswordAuthenticationToken(
                         email, password, new ArrayList<>()));
     }
-
-
-//    FileInputStream serviceAccount =
-//                new FileInputStream("path/to/serviceAccountKey.json");
-//
-//        FirebaseOptions options = new FirebaseOptions.Builder()
-//                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-//                .build();
-//
-//        return FirebaseApp.initializeApp(options);
-
 }

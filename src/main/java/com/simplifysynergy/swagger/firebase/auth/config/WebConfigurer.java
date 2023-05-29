@@ -19,7 +19,6 @@ import org.springframework.web.reactive.result.method.HandlerMethodArgumentResol
 @Configuration
 @Slf4j
 public class WebConfigurer implements WebFluxConfigurer {
-
     @Bean
     public CorsWebFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

@@ -63,7 +63,6 @@ public class SecurityConfiguration {
                 )
                 .addFilterBefore(corsWebFilter, SecurityWebFiltersOrder.REACTOR_CONTEXT)
                 .addFilterAt(new ApiFilter(tokenProvider), SecurityWebFiltersOrder.HTTP_BASIC)
-                .authenticationManager(reactiveApiAuthenticationManager())
                 .authenticationManager(reactiveApiAuthenticationManager());
         return http.build();
     }
