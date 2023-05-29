@@ -75,5 +75,4 @@ public class SecurityConfiguration {
                 .formLogin()
                 .and().build();
     }
-
 }

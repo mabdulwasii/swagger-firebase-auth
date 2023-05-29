@@ -1,5 +1,6 @@
 package com.simplifysynergy.swagger.firebase.auth.controller;
 
+import com.simplifysynergy.swagger.firebase.auth.exception.InvalidStudentNameException;
 import com.simplifysynergy.swagger.firebase.auth.model.Student;
 import com.simplifysynergy.swagger.firebase.auth.repository.StudentRepository;
 import io.swagger.v3.oas.annotations.Operation;
@@ -30,7 +31,11 @@ public class StudentController {
             @Parameter(name = "name", in = ParameterIn.QUERY, required = true, description = "student name")
     })
     public Mono<Student> getByName(@PathVariable String name) {
-        return studentRepository.findByName(name);
+        return studentRepository.findByName(name)
+                .mapNotNull(student -> {
+                    if (student == null) throw new InvalidStudentNameException("name " + name + " is null");
+                    return student;
+                });
     }
 
     @PostMapping
